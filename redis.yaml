@@ -1,0 +1,7 @@
+services:
+  redis:
+    image: redis/redis-stack-server
+    restart: always
+    command: redis-server --requirepass ${REDIS_PASSWORD} --loadmodule /opt/redis-stack/lib/rejson.so --loadmodule /opt/redis-stack/lib/redistimeseries.so
+    ports:
+      - "6379:6379"
